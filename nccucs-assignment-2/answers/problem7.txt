@@ -1,0 +1,9 @@
+To test the functionality of PathFinder, I created various configurations of graphs such as:
+
+- Only one node as source and destination
+- Two unconnected nodes
+- One node as source and destination with an additional path passing through another node
+- Trying to find a path when only an edge in the opposite direction exists
+- Multiple source nodes with different costs, one destination node
+- A graph with two unconnected subgraphs with paths of different costs
+- Two alternate paths with different costs from one source node to one destination node

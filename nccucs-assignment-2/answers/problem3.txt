@@ -1,0 +1,13 @@
+My testing strategy consisted of:
+
+- First, checking that newly created graphs returned correctly an empty list of nodes.
+
+- Testing addNode : I planned to verify that nodes were correctly added to one graph, that the graph responded correctly if duplicate nodes were added, and that another graph was not modified in this process.
+
+- Testing addEdge : I created two graphs, added the same nodes to both of them and verified that adding edges to graph did not have an effect on the other graph even if that second one had the same nodes. I made sure that if an edge was added in a given direction, it didn't imply the creation of another edge in the opposite direction. I then tested if the implementation permitted creation of edges between two nodes in both directions. I also verified that only one edge in a given direction between two nodes could be added to the graph.
+
+- Testing nodes : I simply tested if the expected nodes were returned. This test is very similar to the one for addNode, because we cannot test the two methods separately without having access to the inner structure of the class. In the case where we only test a graph class by using the AbstractGraph interface, we cannot make a test involving addNode independently from nodes and vice versa.
+
+- Testing children : Besides the verifications done while testing addEdge, I tested if adding a duplicate node to a graph didn't lead to the loss of information regarding the edges involving this node (as a parent and as a child). The same problem as in the pair of the tests addNode-nodes exists between the pair addEdge-children. They rely on each other.
+
+- Along with the mentioned strategies, I checked whether an Exception was thrown when it was expected for the methods addNode, addEdge and children.

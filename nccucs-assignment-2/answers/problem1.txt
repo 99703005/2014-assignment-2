@@ -1,0 +1,11 @@
+The operations that the algorithm performs on the graph:
+- Listing the children of a node in a graph: This is the only operation involving the graph itself, the others being performed on either a single node, a set of nodes, a priority queue of nodes, a path or a map of paths.
+
+The operations that the test files perform on the graph:
+- AddNode: modifies a graph by adding a node to it.
+- AddEdge: modifies a graph by adding an edge to it.
+- ListNodes: listing all the nodes of a graph.
+- ListChildren: listing the children of a node in a graph.
+
+Additional note:
+- CreateGraph is not an operation performed on a graph but it means that we will have to implement a constructor to create graphs. However, this will not be specified in the interface.

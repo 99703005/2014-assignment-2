@@ -1,0 +1,11 @@
+2.
+I represent the graph with a HashMap structure which takes the generic type, N (passed as the class parameter) as the key type (so it uses nodes as keys) and the value corresponding to each key is a HashSet of the same generic type of node objects. The HashSet represents the set of the children of the node which is the key to this value.
+
+The reason for choosing a HashMap was to find or insert a node in a graph in constant time. Even when the number of nodes gets very big, if the hashCode method works well, we don't have many collisions in the map (each "bucket" of the HashMap contains few entries). Thus we gain access to the values in constant time, the hash code of each key pointing to the "bucket" we are seeking for.
+
+The values are of type HashSet because the children of a node is a set: it shouldn't contain the same element twice. HashSet is an implementation of the Set interface, backed by a hash table, providing constant-time performance for operations such as adding a node to the set, or finding a node in the set.
+
+Another represantation I considered was again a HashMap, but having this time ArrayList as collections representing children, as the script file tests make use of ordered lists of nodes. I didn't choose this representation because a HashSet is a much more efficient structure for keeping a collection which doesn't contain duplicate elements, and the order of the nodes are not imposed by the interface AbstractGraph. We shouldn't base our representation on tests which will be executed only once, to verify the correctness of the implementation. A HashSet representation of children nodes is more efficient when we consider general use of the Graph class.
+
+3.
+I inserted checkRep in the end of the constructor and in the end of the methods that may change the Graph. As the graph is not immmutable, we must check the representation invariant on creation (as we did for immutable objects) and whenever the instance may be modified, that is, at the end of each method with a "@modifies this" tag.
